@@ -1,7 +1,7 @@
-export default function Score() {
+export default function Score({ score, record }) {
   return (
     <h2 className="text-gray-100 flex justify-center sm:text-2xl">
-      Score: 3 - Highest score: 10
+      Score: {score} - Highest score: {record}
     </h2>
   );
 }
