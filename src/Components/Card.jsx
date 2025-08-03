@@ -10,6 +10,7 @@ export default function Card({ URL, handleGameOver, setScore, gameOver }) {
     } else {
       setScore((prev) => prev + 1);
       setIsClicked(true);
+      shuffleArray();
     }
   }
   useEffect(() => {

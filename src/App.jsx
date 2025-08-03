@@ -19,6 +19,15 @@ function App() {
     }
   }, [gameOver]);
 
+  function shuffleArray() {
+    const newArray = [...pokeID];
+    for (let i = newArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    }
+    return newArray;
+  }
+
   return (
     <div className="bg-slate-700 min-h-screen w-full  flex flex-col items-center gap-8 font-poppins">
       <header>
@@ -29,7 +38,7 @@ function App() {
         <Score score={score} record={record} />
       </header>
       <main className="grid gap-4 mb-10 sm:grid-cols-3 lg:grid-cols-4">
-        {pokeID.map((id) => (
+        {shuffleArray(pokeID).map((id) => (
           <Card
             key={id}
             URL={`${baseUrl}${id}`}
