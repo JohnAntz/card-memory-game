@@ -41,7 +41,7 @@ export default function Card({
   return data ? (
     <div
       onClick={handleClick}
-      className="flex flex-col items-center bg-slate-200 p-6 rounded-xl border-4 border-sky-600">
+      className="hover:cursor-pointer flex flex-col items-center bg-slate-200 p-6 rounded-xl border-4 border-sky-600">
       <img src={data.sprites.front_default} alt="sprite" />
       <h3 className="text-slate-900 text-xl sm:text-2xl">
         {data.species.name.toUpperCase()}
