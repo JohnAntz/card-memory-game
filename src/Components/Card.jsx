@@ -1,6 +1,12 @@
 import { useState, useEffect } from "react";
 
-export default function Card({ URL, handleGameOver, setScore, gameOver }) {
+export default function Card({
+  URL,
+  handleGameOver,
+  setScore,
+  gameOver,
+  shuffleArray,
+}) {
   const [data, setData] = useState(null);
   const [isClicked, setIsClicked] = useState(false);
 
@@ -38,10 +44,10 @@ export default function Card({ URL, handleGameOver, setScore, gameOver }) {
       className="flex flex-col items-center bg-slate-200 p-6 rounded-xl border-4 border-sky-600">
       <img src={data.sprites.front_default} alt="sprite" />
       <h3 className="text-slate-900 text-xl sm:text-2xl">
-        {data.species.name}
+        {data.species.name.toUpperCase()}
       </h3>
     </div>
   ) : (
-    <div>Loading...</div>
+    <div className="text-2xl text-gray-200">Loading...</div>
   );
 }

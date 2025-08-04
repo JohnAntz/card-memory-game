@@ -27,12 +27,15 @@ function App() {
     }
     return newArray;
   }
+  useEffect(() => {
+    if (score >= record) setRecord(score);
+  }, [score]);
 
   return (
-    <div className="bg-slate-700 min-h-screen w-full  flex flex-col items-center gap-8 font-poppins">
+    <div className="bg-slate-600 min-h-screen w-full  flex flex-col items-center gap-8 font-poppins">
       <header>
         {" "}
-        <h1 className="text-gray-100 text-2xl sm:text-4xl mt-10">
+        <h1 className="text-gray-100 underline underline-offset-12 decoration-sky-600 text-2xl sm:text-4xl mt-10">
           Pokemon memory game
         </h1>
         <Score score={score} record={record} />
@@ -46,6 +49,7 @@ function App() {
             handleGameOver={handleGameOver}
             setScore={setScore}
             gameOver={gameOver}
+            shuffleArray={shuffleArray}
           />
         ))}
       </main>
